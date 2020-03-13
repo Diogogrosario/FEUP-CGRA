@@ -18,6 +18,24 @@ class MyUnitCube extends CGFobject {
 		    -0.5 , -0.5 , 0.5, //Canto 1 cima //4
 		    0.5  , -0.5 , 0.5, //Canto 2 cima //5
 		    0.5  , 0.5  , 0.5, //Canto 3 cima //6
+		    -0.5 , 0.5  , 0.5, //Canto 4 cima //7
+
+		    -0.5 , -0.5 ,-0.5, //Canto 1 baixo //0
+		    0.5  , -0.5 ,-0.5, //Canto 2 baixo //1
+		    0.5  , 0.5  ,-0.5, //Canto 3 baixo //2
+		    -0.5 , 0.5  ,-0.5, //Canto 4 baixo //3
+		    -0.5 , -0.5 , 0.5, //Canto 1 cima //4
+		    0.5  , -0.5 , 0.5, //Canto 2 cima //5
+		    0.5  , 0.5  , 0.5, //Canto 3 cima //6
+		    -0.5 , 0.5  , 0.5, //Canto 4 cima //7
+
+		    -0.5 , -0.5 ,-0.5, //Canto 1 baixo //0
+		    0.5  , -0.5 ,-0.5, //Canto 2 baixo //1
+		    0.5  , 0.5  ,-0.5, //Canto 3 baixo //2
+		    -0.5 , 0.5  ,-0.5, //Canto 4 baixo //3
+		    -0.5 , -0.5 , 0.5, //Canto 1 cima //4
+		    0.5  , -0.5 , 0.5, //Canto 2 cima //5
+		    0.5  , 0.5  , 0.5, //Canto 3 cima //6
 		    -0.5 , 0.5  , 0.5 //Canto 4 cima //7
 		
 		];
@@ -66,31 +84,26 @@ class MyUnitCube extends CGFobject {
 		];
         
 
-        var normX,normY,normZ;
-        for(var i=0;i<this.nVertices;i++) // n vertices
+        for(var i=0;i<8;i++) // n vertices
         {
-            for(var j=0;j<3;j++) // coordenadas dos vertices
-            {
-                if(j==0){
-                    if(this.vertices[3*i+j]>0)
-                        normX=1;
-                    else normX=-1;
-                }
-                if(j==1)
-                {
-                    if(this.vertices[3*i+j]>0)
-                        normY=1;
-                    else normY=-1;
-                }
-                if(j==2)
-                {
-                    if(this.vertices[3*i+j]>0)
-                        normZ=1;
-                    else normZ=-1;
-                }
-
-            }
-            this.normals.push(normX/Math.sqrt(3),normY/Math.sqrt(3),normZ/Math.sqrt(3));
+            if(this.vertices[i*3]<0)
+                this.normals.push(-1,0,0);
+            else
+                this.normals.push(1,0,0);
+        }
+        for(var i=0;i<8;i++) // n vertices
+        {
+            if(this.vertices[i*3+1]<0)
+                this.normals.push(0,-1,0);
+            else
+                this.normals.push(0,1,0);
+        }
+        for(var i=0;i<8;i++) // n vertices
+        {
+            if(this.vertices[i*3+2]<0)
+                this.normals.push(0,0,-1);
+            else
+                this.normals.push(0,0,1);
         }
 
          
