@@ -124,9 +124,9 @@ class MyScene extends CGFscene {
         this.material3.setShininess(10.0);
 
         this.material4 = new CGFappearance(this);
-        this.material4.setAmbient(0.25,0.15,0.15,1.0);
-        this.material4.setDiffuse(0.25,0.15,0.15,1.0);
-        this.material4.setSpecular(0.25,0.15,0.15,0.3);
+        this.material4.setAmbient(0.8,0.65,0.45,1.0);
+        this.material4.setDiffuse(0.8,0.65,0.45,1.0);
+        this.material4.setSpecular(0.8,0.65,0.45,0.3);
         this.material4.setShininess(10.0);
 
         // Custom material (can be changed in the interface)
