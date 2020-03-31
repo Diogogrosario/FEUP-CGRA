@@ -41,6 +41,13 @@ class MyTangram extends CGFobject {
             this.scene.scale(0.8,0.8,1);
 
 
+            this.triangle.texCoords = [
+                0,0,
+                0.25,0.25,
+                0,0.5
+            ];
+            this.triangle.updateTexCoordsGLBuffers();
+
             this.triangle.display();
             this.scene.popMatrix();
 
@@ -49,6 +56,14 @@ class MyTangram extends CGFobject {
             this.scene.rotate(-45*Math.PI/180,0,0,1);
             this.scene.scale(0.7,0.7,1);
 
+
+            this.triangle.texCoords = [
+                0.75,0.75,
+                0.5,0.5,
+                0.25,0.75
+            ];
+            this.triangle.updateTexCoordsGLBuffers();
+
             this.triangle.display();
             this.scene.popMatrix();
 
@@ -56,6 +71,13 @@ class MyTangram extends CGFobject {
             this.scene.translate(-1.5,-1.5,0);
             this.scene.rotate(Math.PI/2,0,0,1);
             this.scene.scale(1.5,1.5,0);
+
+            this.triangle.texCoords = [
+                0,0,
+                0.5,0.5,
+                1,0
+            ];
+            this.triangle.updateTexCoordsGLBuffers();
 
             this.triangle.display();
             this.scene.popMatrix();
@@ -66,6 +88,13 @@ class MyTangram extends CGFobject {
             this.scene.rotate(Math.PI/2,0,0,1);
             this.scene.scale(1.05,1.05,1);
 
+            this.triangle.texCoords = [
+                0,0.5,
+                0,1,
+                0.5,1
+            ];
+            this.triangle.updateTexCoordsGLBuffers();
+
             this.triangle.display();
             this.scene.popMatrix();
 
@@ -74,6 +103,12 @@ class MyTangram extends CGFobject {
             this.scene.rotate(45*Math.PI/180,0,0,1);
             this.scene.scale(1.3,1.3,1);
             
+            this.triangle.texCoords = [
+                1,0,
+                0.5,0.5,
+                1,1
+            ];
+            this.triangle.updateTexCoordsGLBuffers();
 
             this.triangle.display();
             this.scene.popMatrix();

@@ -27,11 +27,13 @@ class MyTriangle extends CGFobject {
             this.normals.push(0,0,1);
         }
 
-        this.texCoords = [
-            0,0,
-            0,1,
-            1,1
-        ]
+		this.texCoords = [
+			0,0,
+			0.25,0.25,
+			0.5,0
+		];
+		
+		this.updateTexCoordsGLBuffers();
 
 		//The defined indices (and corresponding vertices)
 		//will be read in groups of three to draw triangles
